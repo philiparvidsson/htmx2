@@ -1,0 +1,20 @@
+[package]
+name = "htmx2"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+cfg-if = "1.0.0"
+chrono = "0.4.31"
+cookie = "0.18.0"
+inventory = "0.3.13"
+serde = { version = "1.0.193", features = ["derive"] }
+
+axum = { version = "0.6.20", optional = true }
+maud = {  version = "0.25.0", optional = true }
+
+htmx2_macros = { path = "../htmx2_macros", optional = true }
+
+[features]
+axum = ["dep:axum"]
+maud = ["dep:maud", "htmx2_macros/maud"]
